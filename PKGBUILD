@@ -1,82 +1,7 @@
 # Maintainer: Andreas Brenk <mail@andreasbrenk.com>
-pkgname=('openhab-runtime'
-         'openhab-action-mail'
-         'openhab-action-nma'
-         'openhab-action-prowl'
-         'openhab-action-squeezebox'
-         'openhab-action-twitter'
-         'openhab-action-xbmc'
-         'openhab-action-xmpp'
-         'openhab-binding-anel'
-         'openhab-binding-asterisk'
-         'openhab-binding-astro'
-         'openhab-binding-bluetooth'
-         'openhab-binding-comfoair'
-         'openhab-binding-configadmin'
-         'openhab-binding-cups'
-         'openhab-binding-digitalstrom'
-         'openhab-binding-dmx'
-         'openhab-binding-enocean'
-         'openhab-binding-epsonprojector'
-         'openhab-binding-exec'
-         'openhab-binding-fritzaha'
-         'openhab-binding-fritzbox'
-         'openhab-binding-homematic'
-         'openhab-binding-http'
-         'openhab-binding-hue'
-         'openhab-binding-ihc'
-         'openhab-binding-knx'
-         'openhab-binding-koubachi'
-         'openhab-binding-milight'
-         'openhab-binding-modbus'
-         'openhab-binding-mpd'
-         'openhab-binding-mqtt'
-         'openhab-binding-mqttitude'
-         'openhab-binding-netatmo'
-         'openhab-binding-networkhealth'
-         'openhab-binding-nibeheatpump'
-         'openhab-binding-nikobus'
-         'openhab-binding-novelanheatpump'
-         'openhab-binding-ntp'
-         'openhab-binding-onewire'
-         'openhab-binding-onkyo'
-         'openhab-binding-opensprinkler'
-         'openhab-binding-owserver'
-         'openhab-binding-piface'
-         'openhab-binding-plcbus'
-         'openhab-binding-plugwise'
-         'openhab-binding-pulseaudio'
-         'openhab-binding-rfxcom'
-         'openhab-binding-samsungtv'
-         'openhab-binding-serial'
-         'openhab-binding-snmp'
-         'openhab-binding-sonos'
-         'openhab-binding-squeezebox'
-         'openhab-binding-systeminfo'
-         'openhab-binding-tcp'
-         'openhab-binding-tinkerforge'
-         'openhab-binding-urtsi'
-         'openhab-binding-vdr'
-         'openhab-binding-weather'
-         'openhab-binding-wol'
-         'openhab-binding-xbmc'
-         'openhab-binding-zwave'
-         'openhab-io-dropbox'
-         'openhab-io-freetts'
-         'openhab-io-marytts'
-         'openhab-io-squeezeserver'
-         'openhab-persistence-cosm'
-         'openhab-persistence-db4o'
-         'openhab-persistence-exec'
-         'openhab-persistence-gcal'
-         'openhab-persistence-logging'
-         'openhab-persistence-mqtt'
-         'openhab-persistence-rrd4j'
-         'openhab-persistence-sense'
-         'openhab-persistence-mysql'
-         'openhab-demo-configuration')
+pkgname=('openhab-runtime')
 pkgbase=openhab
-pkgver=1.7.0
+pkgver=2.0.0.alpha2
 pkgrel=1
 arch=('x86_64'
       'armv6h'
@@ -88,10 +13,8 @@ makedepends=('unzip')
 options=(!strip)
 changelog=ChangeLog
 options=(!strip)
-#https://openhab.ci.cloudbees.com/job/openHAB/lastSuccessfulBuild/artifact/distribution/target/distribution-1.5.0-SNAPSHOT-addons.zip
-source=("https://bintray.com/artifact/download/openhab/bin/distribution-${pkgver}-runtime.zip"
-        "https://bintray.com/artifact/download/openhab/bin/distribution-${pkgver}-addons.zip"
-        "https://bintray.com/artifact/download/openhab/bin/distribution-${pkgver}-demo-configuration.zip"
+source=("https://bintray.com/artifact/download/openhab/bin/openhab-${pkgver}-runtime.zip"
+	"https://bintray.com/artifact/download/openhab/bin/openhab-${pkgver}-addons.zip"
         'openhab'
         'openhab.conf.d'
         'openhab.service'
@@ -99,10 +22,8 @@ source=("https://bintray.com/artifact/download/openhab/bin/distribution-${pkgver
 source_x86_64+=('http://wrapper.tanukisoftware.com/download/3.5.26/wrapper-linux-x86-64-3.5.26.tar.gz')
 source_armv6h=('http://wrapper.tanukisoftware.com/download/3.5.26/wrapper-linux-armhf-32-3.5.26.tar.gz')
 source_armv7h=('http://wrapper.tanukisoftware.com/download/3.5.26/wrapper-linux-armhf-32-3.5.26.tar.gz')
-noextract=("distribution-${pkgver}-demo-configuration.zip")
-md5sums=('cecc93e8cf8abf96a956c1502229efaf'
-         'e2340abbb14fc6c22e0d884a431dc5de'
-         '133cc5b78f428d0c277f01db08b400e2'
+md5sums=('0807588327d3fa718aebcbfe510eb1e4'
+	 'ae8b94fb78f4675a751e4effcd29578e'
          'e42879cf579ba86886d86d3a9dbc8fbc'
          'abe63d99dc7a173e079c6c033fd39377'
          '891947fb68de43849339ab0cd1b1a031'
@@ -110,9 +31,6 @@ md5sums=('cecc93e8cf8abf96a956c1502229efaf'
 md5sums_x86_64=('91d4bd44bd8cfa567262ec715ee29a70')
 md5sums_armv6h=('2b0294f6d7faac87ddfcb63bd22cf311')
 md5sums_armv7h=('2b0294f6d7faac87ddfcb63bd22cf311')
-
-#pkgver() {
-#}
 
 do_package_action() {
   arch=('any')
